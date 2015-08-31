@@ -1,0 +1,5 @@
+bubbleFind(A[]){
+  for (i = 0; i < A.length - 1; i++);
+    if (A[i] == 26)
+      System.out.println("Twenty-six exisits in the array");
+    }
