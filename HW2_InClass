@@ -127,7 +127,7 @@ class Date {
    *  year.)
    */
   public int dayInYear() {
-    return 0;                           // replace this line with your solution
+    return 365 + (isLeapYear(this.y)?1:0);
   }
 
   /** Determines the difference in days between d and this Date.  For example,
@@ -136,9 +136,37 @@ class Date {
    *  @return the difference in days between d and this date.
    */
   public int difference(Date d) {
-    return 0;                           // replace this line with your solution
+    if(isBefore(d))
+      return myDiff( new Date(this.toString()),d);
+    else
+      return -myDiff(d, new Date(this.toString()));
   }
-
+  
+  private int myDiff(Date a, Date b) {
+    int result =0;
+    for(int yy = a.y+1;yy<b.y;yy++)
+      result += 365 + (isLeapYear(yy)?1:0?)
+    if(a.y != b.y){
+      b.y = a.y+1;
+      result += myDiff(a, new Date(12,31,a.y)) + 1 + myDiff(1,1,b.y,b);
+    }
+    else {
+      for(int mm= a.m+1; mm<b.m;mm++){
+        result += A[mm-1];
+        if(isLeapYear(a.y) && mm == 2)
+          result++;
+      }
+      if(a.m == b.m)
+        result +=b.d-b.a
+      else {
+        result + b.d + A[a.m-1] - a.d;
+        if(isLeapYear(a.y) && a.m == 2)
+          result++;
+      }
+    } 
+    
+    return.result
+}
   public static void main(String[] argv) {
     System.out.println("\nTesting constructors.");
     Date d1 = new Date(1, 1, 1);
